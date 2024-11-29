@@ -1,0 +1,67 @@
+# IoT Energy Monitoring System with Firebase Integration
+
+This repository contains the code for an **IoT Energy Monitoring System** designed to monitor voltage, current, and energy consumption in real-time using **NodeMCU** (ESP8266/ESP32). The system collects data from connected sensors and sends it to **Firebase** for real-time data storage and retrieval.
+
+### **Project Overview**
+
+The energy monitoring system includes:
+- **Voltage sensor** for measuring voltage.
+- **Current sensor** for measuring current.
+- **Interrupt-based energy impulse counter** to monitor energy consumption.
+- **Firebase integration** to store and retrieve data in real-time.
+- **NTP synchronization** to keep track of the current time for accurate data logging.
+
+### **Features**
+
+- Real-time voltage and current measurements.
+- Energy impulse counting using interrupts.
+- Timestamped data sent to Firebase for storage.
+- Data visualization through Firebase Realtime Database.
+- Wi-Fi connectivity for cloud integration.
+
+---
+
+### **Project Files**
+
+- **`Voltage_Sensor_ZMPT101B.c`**: Contains logic for measuring and calculating voltage readings from the connected voltage sensor.
+- **`Current_Sensor_ZHT103_ZMCT_103.c`**: Handles current measurements using a current sensor.
+- **`Energy_meter_INTERRUPT`**: Manages energy impulse counting logic.
+- **`Main_code.c`**: The main file where the system initializes, connects to Wi-Fi, communicates with Firebase, and manages sensor data.
+
+---
+
+### **Installation**
+
+#### **Step 1: Clone the Repository**
+
+Clone the repository to your local machine:
+
+    ```bash
+        git clone https://github.com/yourusername/energy-monitoring-system.git
+        cd energy-monitoring-system
+    ```bash
+
+
+#### **Step 2: Install Libraries**
+This project requires the following libraries to work properly:
+    ```bash
+            Adafruit_ADS1X15: For ADC (Analog-to-Digital Converter) sensor readings.
+            FirebaseESP32/FirebaseESP8266: For Firebase communication.
+            NTPClient: To sync the system time from an NTP server.
+            You can install these libraries via the Arduino Library Manager or by downloading them directly from the Arduino website.
+    ```bash
+#### **Step 3: Update Configuration**
+In the main.c file, update the following configurations:
+
+Firebase Configuration:
+
+API_KEY: Your Firebase Web API Key.
+DATABASE_URL: The URL of your Firebase Realtime Database.
+Wi-Fi Configuration:
+
+ssid: Your Wi-Fi network SSID (name).
+password: Your Wi-Fi network password.
+#### **Step 4: Upload Code to ESP8266/ESP32**
+Use the Arduino IDE to upload the code to your ESP8266/ESP32 device:
+
+
